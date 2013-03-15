@@ -4,25 +4,39 @@
         <meta charset="utf-8">
         <title>D3 Test</title>
         <script type="text/javascript" src="d3.v3/d3.v3.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <script type="text/javascript">
             var dataset = [5, 10, 15, 20, 25]
 
-            d3.select("body").selectAll("p")
+            // # using your data
+            // d3.select("body").selectAll("p")
+            //     .data(dataset)
+            //     .enter()
+            //     .append("p")
+            //     .text(function(d) {
+            //         return "I can count to " + d;
+            //     })
+            //     .style("color", function(d) {
+            //         if (d > 15) {
+            //             return "red";
+            //         } else {
+            //             return "black";
+            //         }
+            //     });
+
+            // # Drawing Divs
+            d3.select("body").selectAll("div")
                 .data(dataset)
                 .enter()
-                .append("p")
-                .text(function(d) {
-                    return "I can count to " + d;
+                .append("div")
+                .attr("class", "bar")
+                .style("height", function(d) {
+                    bar_height = d * 5
+                    return bar_height + "px"
                 })
-                .style("color", function(d) {
-                    if (d > 15) {
-                        return "red";
-                    } else {
-                        return "black";
-                    }
-                });
+                .style("margin-right", "2px");
         </script>
     </body>
 </html> 

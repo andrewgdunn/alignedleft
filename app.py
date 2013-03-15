@@ -13,8 +13,13 @@ def index():
 
 # Route the resource request to the proper js file
 @app.route('/d3.v3/d3.v3.js')
-def sencha_app():
+def static_d3():
     return redirect(url_for('static', filename='d3.v3/d3.v3.js'))
+
+
+@app.route('/style.css')
+def static_style():
+    return redirect(url_for('static', filename='style.css'))
 
 # Generalized resource request
 # @app.route('/app/view/<control>')

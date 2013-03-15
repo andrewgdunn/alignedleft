@@ -8,7 +8,13 @@
     </head>
     <body>
         <script type="text/javascript">
-            var dataset = [5, 10, 15, 20, 25]
+            //var dataset = [5, 10, 15, 20, 25]
+            var dataset = []
+
+            for (var i = 0; i < 25; i++) {           
+                var newNumber = Math.round(Math.random() * 30);  
+                dataset.push(newNumber);
+            }
 
             // # using your data
             // d3.select("body").selectAll("p")
